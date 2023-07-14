@@ -75,12 +75,10 @@ const MovieDetail = () => {
       const video = <GetVideo idNowPlay={id} />;
       return (
         <>
-          <div style={{ paddingBottom: "20rem" }}>
-            <Hero backdrop={backdropUrl} height="30rem" />
-            <div className="container position-relative">
+            <Hero backdrop={backdropUrl} height='20rem'/>
+            <div className="w-100">
               <div
-                className="position-absolute d-flex justify-content-center gap-3 translate-middle-y z-3 flex-wrap flex-lg-nowrap"
-                style={{ top: "0" }}
+                className="container py-5 d-flex justify-content-center gap-3 flex-wrap flex-lg-nowrap"
               >
                 <img src={posterUrl} className="rounded-4 poster-img" />
                 <div>
@@ -111,7 +109,6 @@ const MovieDetail = () => {
                 </div>
               </div>
             </div>
-          </div>
         </>
       );
     } else {

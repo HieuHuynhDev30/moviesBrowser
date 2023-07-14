@@ -1,9 +1,7 @@
 import { Outlet, Link, useNavigate } from "react-router-dom";
-import logo from './images/movies-browser-low-resolution-logo-color-on-transparent-background.png';
+import logo from "./images/movies-browser-low-resolution-logo-color-on-transparent-background.png";
 import Footer from "./Footer";
 import "./App.css";
-
-
 
 function Navbar({ searchText, setSearchText }) {
   const navigate = useNavigate();
@@ -18,11 +16,11 @@ function Navbar({ searchText, setSearchText }) {
   }
   return (
     <>
-      <div className="page-wrap text-light">
+      <div className="page-wrap text-light pb-5">
         <nav className="navbar navbar-expand-lg" data-bs-theme="dark">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <img style={{width: '15rem'}} src={logo} alt="logo"/>
+              <img style={{ width: "15rem" }} src={logo} alt="logo" />
             </Link>
             <button
               className="navbar-toggler"
@@ -35,7 +33,10 @@ function Navbar({ searchText, setSearchText }) {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to="/">
@@ -62,7 +63,11 @@ function Navbar({ searchText, setSearchText }) {
                   value={searchText}
                   onChange={updateSearch}
                 />
-                <input className="button--submit" value="Search" type="submit" />
+                <input
+                  className="button--submit"
+                  value="Search"
+                  type="submit"
+                />
               </form>
             </div>
           </div>

@@ -30,13 +30,11 @@ export function GetVideo({ idNowPlay, titleNowPlay }) {
   }, []);
   const videoUrl = `https://www.youtube.com/embed/${keyVideo}?autoplay=1&origin=https%3A%2F%2Fwww.themoviedb.org&hl=en&modestbranding=1&fs=1&autohide=1`;
   return (
-    <div >
+    <div className="ratio ratio-16x9">
       <iframe
         className="rounded-4"
         type="text/html"
         style={{ backgroundColor: "#000" }}
-        width="1080"
-        height="500"
         src={videoUrl}
         frameborder="0"
         allowfullscreen=""

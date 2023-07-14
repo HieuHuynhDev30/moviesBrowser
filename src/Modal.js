@@ -10,8 +10,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 1080,
+  width: 'min(100%, 1080px)',
   boxShadow: 24,
+  color: '#ffff',
 };
 
 export default function TransitionsModal({ button, title, content }) {

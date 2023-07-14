@@ -4,12 +4,12 @@ import './App.css';
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-5">
+    <footer className="bg-dark text-white py-5 mt-5">
       <div className="container lh-lg" style={{ width: 'min(100%, 30rem)' }}>
         <Link  to="/" >
           <img src={logo2} className="w-100" />
         </Link>
-        <div className="d-flex justify-content-between gap-5 fs-5 w-100">
+        <div className="d-flex justify-content-between fs-5 w-100">
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
             Home
           </Link>
