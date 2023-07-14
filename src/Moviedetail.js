@@ -65,7 +65,11 @@ const MovieDetail = () => {
     } else {
       var posterUrl = "https://movienewsletters.net/photos/000000h1.jpg";
     }
-    const backdropUrl = `https://image.tmdb.org/t/p/original${movieBackdrop}`;
+    if (movieBackdrop) {
+      var backdropUrl = `https://image.tmdb.org/t/p/original${movieBackdrop}`;      
+    } else {
+      var backdropUrl = "https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80";
+    }
     if (movieDetail) {
       const trailerButton = (
         <button class="button">
