@@ -84,7 +84,7 @@ function SurpriseMe() {
       };
       const link = `/movie/${surprisedId}`;
       return (
-        <div className="d-flex position-relative justify-content-between align-items-center" style={{marginTop: '2rem', heigth: '20rem'}}>
+        <div className="d-flex position-relative justify-content-between align-items-center" style={{marginTop: '2rem', height: '20rem'}}>
           <div
             className="position-absolute"
             style={backgroundStyle}
@@ -106,7 +106,7 @@ function SurpriseMe() {
               <h5>Release date: </h5>&#160;{releaseDate}
             </p>
             <p>{movieDetail}</p>
-            <Link to={link} className="text-decoration-none ps-4" target="blank">
+            <Link to={link} className="text-decoration-none ps-4">
               <button class="cssbuttons-io">
                 <span>
                   Show detail
