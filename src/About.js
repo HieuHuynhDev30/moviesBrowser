@@ -55,7 +55,7 @@ const AboutView = () => {
       </div>
       <div className="container py-5">
         <Slider {...settings}>
-          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2">
+          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2 flex-wrap flex-md-nowrap">
             <img src={cmLogo1} />
             <div>
               <p>
@@ -71,7 +71,7 @@ const AboutView = () => {
               </p>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2">
+          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2 flex-wrap flex-md-nowrap">
             <img src={cmLogo2} className="rounded-4" />
             <div>
               <p>
@@ -87,7 +87,7 @@ const AboutView = () => {
               <p className="lead">Matthew Buchanan, Co-founder of Letterboxd</p>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2">
+          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2 flex-wrap flex-md-nowrap">
             <img src={cmLogo3} className="rounded-4" />
             <div>
               <p>
@@ -97,7 +97,7 @@ const AboutView = () => {
               <p className="lead">Hosam Hassan, Co-founder of Taphive GmbH</p>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2">
+          <div className="d-flex justify-content-center align-items-center w-75 m-auto gap-2 flex-wrap flex-md-nowrap">
             <img src={cmLogo4} className="rounded-4" />
             <div>
               <p>
