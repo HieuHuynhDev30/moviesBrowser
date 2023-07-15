@@ -16,7 +16,7 @@ function Footer() {
           <Link to="about" className="text-nowrap" style={{ color: "inherit", textDecoration: "none" }}>
             About us
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+          <Link to="contact" style={{ color: "inherit", textDecoration: "none" }}>
             Contact
           </Link>
         </div>
