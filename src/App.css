@@ -407,3 +407,18 @@ body {
       rgba(99, 88, 238, 1) 94.3%);
   transition: all 0.475s;
 }
+@media screen and (max-width: 994px) {
+  .open {
+    height: 11rem;
+    visibility: visible;
+    opacity: 1;
+  }
+  .close {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.drop { 
+  transition: all .5s ease !important;
+}
