@@ -5,7 +5,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 function Navbar({ searchText, setSearchText }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   function updateSearch(event) {
     navigate("/moviecard");
