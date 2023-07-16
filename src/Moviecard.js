@@ -36,14 +36,14 @@ function Moviecard({ keyword, result }) {
     const link = `/movie/${item.id}`;
     return (
       <div
-        className="col-6 col-md-4 col-xl-3 d-flex py-2"
-        style={{ maxHeight: "40rem" }}
+        className=" d-flex py-2"
+        style={{ width: "min(18rem, 80%)" }}
       >
         <div className="w-100 film-card">
           <img src={poster} className="card-img-top h-75" alt={poster} />
           <div className="card-body d-flex flex-column justify-content-between h-25">
             <div className="card-title text-center">{item.title}</div>
-            <div className="text-center">
+            <div className="text-center overflow-hidden">
               <Tagline id={item.id} />
             </div>
             <Link to={link} className="text-decoration-none ps-4">
@@ -68,7 +68,7 @@ function Moviecard({ keyword, result }) {
         />
         {result.length != 0 ? (
           <div className="container">
-            <div className="row d-flex">{movieCard}</div>
+            <div className="d-flex flex-wrap gap-4 justify-content-center">{movieCard}</div>
           </div>
         ) : (
           <h1 >No results</h1>
