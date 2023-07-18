@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import "./App.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Spinner } from "./Surprise";
 
 const Tagline = ({ id }) => {
   const [tagline, setTagline] = useState("");
@@ -35,10 +36,7 @@ function Moviecard({ keyword, result }) {
     }
     const link = `/movie/${item.id}`;
     return (
-      <div
-        className=" d-flex py-2"
-        style={{ width: "min(18rem, 80%)" }}
-      >
+      <div className=" d-flex py-2" style={{ width: "min(18rem, 80%)" }}>
         <div className="w-100 film-card">
           <img src={poster} className="card-img-top h-75" alt={poster} />
           <div className="card-body d-flex flex-column justify-content-between h-25">
@@ -48,9 +46,7 @@ function Moviecard({ keyword, result }) {
             </div>
             <Link to={link} className="text-decoration-none ps-4">
               <button class="cssbuttons-io">
-                <span>
-                  Show detail
-                </span>
+                <span>Show detail</span>
               </button>
             </Link>
           </div>
@@ -58,24 +54,41 @@ function Moviecard({ keyword, result }) {
       </div>
     );
   });
-  return (
-    <>
-      <div style={{paddingBottom: "5rem"}}>
+  if (keyword) {
+    return (
+      <>
+        <div style={{ paddingBottom: "5rem" }}>
+          <Hero
+            backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            text={title}
+            height="8rem"
+          />
+          {result.length != 0 ? (
+            <div className="container">
+              <div className="d-flex flex-wrap gap-4 justify-content-center">
+                {movieCard}
+              </div>
+            </div>
+          ) : (
+            <h1>{`No results found for "${keyword}"!`}</h1>
+          )}
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <div style={{ paddingBottom: "5rem" }}>
         <Hero
           backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
           text={title}
           height="8rem"
         />
-        {result.length != 0 ? (
-          <div className="container">
-            <div className="d-flex flex-wrap gap-4 justify-content-center">{movieCard}</div>
-          </div>
-        ) : (
-          <h1 >No results</h1>
-        )}
+        <div className="mt-5">
+          <Spinner />
+        </div>
       </div>
-    </>
-  );
+    );
+  }
 }
 
 export default Moviecard;
