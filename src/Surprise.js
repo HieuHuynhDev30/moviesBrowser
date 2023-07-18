@@ -3,6 +3,14 @@ import "./App.css";
 import Hero from "./Hero";
 import { Link } from "react-router-dom";
 
+export function Spinner() {
+  return (
+    <div style={{ height: "8rem" }}>
+      <div class="loader m-auto"></div>
+    </div>
+  );
+};
+
 function SurpriseMe() {
   const [surprisedId, setSurpriseId] = useState("0");
   const [movieDetail, setMovieDetail] = useState("");
@@ -42,11 +50,6 @@ function SurpriseMe() {
       .catch((err) => console.error(err));
   }, [surprisedId]);
 
-  const spinner = () => {
-    return <div style={{height: '8rem'}}>
-      <div class="loader m-auto" ></div>
-    </div>;
-  };
   function Loading() {
     if (moviePoster) {
       var posterUrl = `https://image.tmdb.org/t/p/w500${moviePoster}`;
@@ -60,43 +63,39 @@ function SurpriseMe() {
           return <span>&#160;{item.name},</span>;
         });
       } else {
-        var showGenres = <span>&#160;unknown</span>
+        var showGenres = <span>&#160;unknown</span>;
       }
       if (movieBackdrop) {
         var backdropUrl = `https://image.tmdb.org/t/p/original${movieBackdrop}`;
       } else {
-        var backdropUrl = "https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80";
+        var backdropUrl =
+          "https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80";
       }
       const backgroundStyle = {
         backgroundImage: `url(${backdropUrl})`,
-        top: '50%',
-        transform: 'translateY(-50%)',
-        bottom: '0',
-        left: '0',
-        right: '0',
+        top: "0",
+        bottom: "0",
+        left: "0",
+        right: "0",
         filter: "blur(5px)",
         backgroundSize: "cover",
-        backgroundPosition: '50% 50%',
-        height: "15rem",
+        backgroundPosition: "50% 50%",
         zIndex: "-3",
         opacity: "0.6",
-        borderRadius: '10px'
+        borderRadius: "10px",
       };
       const link = `/movie/${surprisedId}`;
       return (
-        <div className="d-flex position-relative justify-content-between align-items-center" style={{marginTop: '5rem', height: '20rem'}}>
+        <div
+          className="d-flex position-relative justify-content-center align-items-center flex-wrap gap-3"
+          style={{ marginTop: "2rem", heigth: "20rem" }}
+        >
+          <img src={posterUrl} className="rounded-4" style={{ width: "min(18rem, 80%)" }} />
           <div
-            className="position-absolute"
-            style={backgroundStyle}
-          ></div>
-          {/* <div className="position-relative" style={{width: '20%'}}> */}
-            <img
-              src={posterUrl}
-              className="rounded-4"
-              style={{ width: "20%" }}
-            />
-          {/* </div> */}
-          <div className="h-100 w-75 d-flex flex-column justify-content-center">
+            className="d-flex flex-column justify-content-center position-relative"
+            style={{ width: "min(80%, 60rem)" }}
+          >
+            <div className="position-absolute" style={backgroundStyle}></div>
             <h1>{movieTitle}</h1>
             <p className=" d-flex align-items-baseline mb-0">
               <h5>Genres: </h5>
@@ -106,37 +105,40 @@ function SurpriseMe() {
               <h5>Release date: </h5>&#160;{releaseDate}
             </p>
             <p>{movieDetail}</p>
-            <Link to={link} className="text-decoration-none ps-4">
+            <Link
+              to={link}
+              className="text-decoration-none ps-4"
+              target="blank"
+            >
               <button class="cssbuttons-io">
-                <span>
-                  Show detail
-                </span>
+                <span>Show detail</span>
               </button>
             </Link>
           </div>
         </div>
       );
     } else {
-      return <>
-      {
-        surprisedId === '0' ?
-        <div className="rounded-4 overflow-hidden">
-          <Hero
-          backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-          text="Random movie"
-          height="10rem"
-                />
-        </div>
-        :
-        <div className="rounded-4 overflow-hidden">
-          <Hero
-          backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-          text="Try again"
-          height="10rem"
-                />
-        </div>
-      }
-      </>
+      return (
+        <>
+          {surprisedId === "0" ? (
+            <div className="rounded-4 overflow-hidden">
+              <Hero
+                backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                text="Random movie"
+                height="10rem"
+              />
+            </div>
+          ) : (
+            <div className="rounded-4 overflow-hidden">
+              <Hero
+                backdrop="https://images.unsplash.com/photo-1509564324749-471bd272e1ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                text="Try again"
+                height="10rem"
+              />
+            </div>
+          )}
+        </>
+      );
     }
   }
 
@@ -150,7 +152,7 @@ function SurpriseMe() {
         >
           <span>Surprise me</span>
         </button>
-        <div className="rounded-4">{isLoading ? spinner() : Loading()}</div>
+        <div className="rounded-4">{isLoading ? <Spinner /> : Loading()}</div>
       </div>
     </>
   );
