@@ -47,7 +47,7 @@ const TrailersV2 = ({ results }) => {
             style={{ width: "100%" }}
             alt={thumbnailBackdrop}
           />
-          <div class="overlay"></div>
+          <div className="overlay"></div>
           <button
             type="button"
             className="card-thumbnail-btn"
