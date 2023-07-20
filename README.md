@@ -6,4 +6,5 @@ During the making, plenty of features were applied to the design, which makes th
 The site is one of many projects I made while I was learning web development in Udemy.
 
 No line was written in Github
+Just made a clone in local
 
