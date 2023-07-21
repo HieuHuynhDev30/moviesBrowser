@@ -108,7 +108,6 @@ function SurpriseMe() {
             <Link
               to={link}
               className="text-decoration-none ps-4"
-              target="blank"
             >
               <button class="cssbuttons-io">
                 <span>Show detail</span>
