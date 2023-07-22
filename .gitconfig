@@ -1,6 +1,6 @@
 [user]
-	name = Your Name
-	email = your-email@website.com
+	name = Hieu Huynh
+	email = hieuanm307@gmail.com
 [core]
     editors = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
